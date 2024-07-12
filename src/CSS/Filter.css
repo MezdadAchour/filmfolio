@@ -1,0 +1,40 @@
+@import "variables.css";
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  background-color: var(--bg-secondary);
+  padding: 15px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(10px);
+}
+
+.filter input {
+  width: 45%;
+  padding: 10px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--text-secondary);
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.filter input:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter input {
+    width: 90%;
+    margin-bottom: 10px;
+  }
+}

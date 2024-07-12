@@ -1,0 +1,19 @@
+@import "variables.css";
+
+.movie-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  background-color: var(--bg-primary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .movie-list {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+}

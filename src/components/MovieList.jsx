@@ -1,22 +1,20 @@
+import '../CSS/MovieList.css';
 import MovieCard from "./MovieCard";
+import AddMovieForm from './AddMovieForm';
 
-const MovieList = ({movies}) => {
-    return (
-      <div className="movie-list" style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center'
-      }}>
-        {movies.map((movie)=>(
-          <MovieCard
+const MovieList = ({ movies, onDeleteMovie, onAddMovie }) => {
+  return (
+    <div className="movie-list">
+      <AddMovieForm onAddMovie={onAddMovie} />
+      {movies.map((movie) => (
+        <MovieCard
           key={movie.id}
-          title={movie.title}
-          posterUrl={movie.posterUrl}
-          rating={movie.rating}
-          />
-        ))}
-      </div>
-    );
-  };
-  
-  export default MovieList;
+          movie={movie}
+          onDelete={() => onDeleteMovie(movie.id)}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default MovieList;

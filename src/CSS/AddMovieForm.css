@@ -1,0 +1,69 @@
+@import "variables.css";
+
+.add-movie-form {
+  background-color: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.add-movie-form form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 10%;
+}
+
+.add-movie-form h3 {
+  margin: 0 0 15px 0;
+  color: var(--text-primary);
+}
+
+.add-movie-form input,
+.add-movie-form textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--text-secondary);
+  border-radius: var(--border-radius);
+  color: var(--text-primary);
+  transition: var(--transition);
+}
+
+.add-movie-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.add-movie-form input:focus,
+.add-movie-form textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+}
+
+.add-movie-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--accent-color);
+  color: var(--bg-primary);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: auto;
+}
+
+.add-movie-form button:hover {
+  opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .add-movie-form form {
+    padding: 5%;
+  }
+}
