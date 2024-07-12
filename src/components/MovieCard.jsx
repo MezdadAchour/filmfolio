@@ -1,5 +1,5 @@
 import '../CSS/MovieCard.css';
-import { FaTrash } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa'; //icone supprimer font awesome
 
 const MovieCard = ({ movie, onDelete }) => {
   return (

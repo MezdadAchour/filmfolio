@@ -4,7 +4,9 @@ import MovieList from "./components/MovieList";
 import Filter from "./components/Filter";
 
 const App = () => {
+  // films
   const [movies, setMovies] = useState(() => {
+    // renvoyer localStorage ou exemple
     const savedMovies = localStorage.getItem("movies");
     return savedMovies
       ? JSON.parse(savedMovies)
@@ -33,25 +35,32 @@ const App = () => {
         ];
   });
 
+  // filtrer
   const [filteredMovies, setFilteredMovies] = useState(movies);
+  // par titre
   const [titleFilter, setTitleFilter] = useState("");
+  // par note
   const [ratingFilter, setRatingFilter] = useState("");
 
+  // mettre a jour les films
   useEffect(() => {
     localStorage.setItem("movies", JSON.stringify(movies));
   }, [movies]);
 
+  // ajouter un film
   const addMovie = (newMovie) => {
     const newId =
-      movies.length > 0 ? Math.max(...movies.map((m) => m.id)) + 1 : 1;
+      movies.length > 0 ? Math.max(...movies.map((m) => m.id)) + 1 : 1; // ajouter ID > a ID max
     const movieWithId = { ...newMovie, id: newId };
     setMovies([...movies, movieWithId]);
   };
 
+  // supprimer un film
   const deleteMovie = (id) => {
     setMovies(movies.filter((movie) => movie.id !== id));
   };
 
+  // afficher les films filtrés
   useEffect(() => {
     const filtered = movies.filter(
       (movie) =>

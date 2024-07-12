@@ -1,11 +1,13 @@
 import '../CSS/AddMovieForm.css';
 import { useState } from "react";
 
+// useState
 const AddMovieForm = ({ onAddMovie }) => {
   const [title, setTitle] = useState('');
   const [posterUrl, setPosterUrl] = useState('');
   const [rating, setRating] = useState('');
 
+//   soumettre nouveau film 
   const handleSubmit = (e) => {
     e.preventDefault();
     const newMovie = {
@@ -19,12 +21,13 @@ const AddMovieForm = ({ onAddMovie }) => {
     setRating('');
   };
 
+
   return (
     <div className="movie-card add-movie-form">
       <h3>Ajouter un nouveau film</h3>
       <form onSubmit={handleSubmit}>
-        <div>
-          <input
+        <div> 
+          <input //titre
             type="text"
             placeholder="Titre"
             value={title}
@@ -33,7 +36,7 @@ const AddMovieForm = ({ onAddMovie }) => {
           />
         </div>
         <div>
-          <input
+          <input //image
             type="url"
             placeholder="URL de l'affiche"
             value={posterUrl}
@@ -43,7 +46,7 @@ const AddMovieForm = ({ onAddMovie }) => {
         </div>
         <div>
           <input
-            type="number"
+            type="number" //note
             placeholder="Note (0-5)"
             min="0"
             max="5"
