@@ -9,8 +9,17 @@
   position: relative;
 }
 
+.movie-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .movie-card:hover {
   transform: translateY(-5px);
+}
+
+.movie-card:hover .movie-info h3 {
+  color: var(--accent-color);
 }
 
 .movie-card img {
@@ -24,6 +33,7 @@
 }
 
 .movie-card h3 {
+  text-decoration: none;
   padding: 15px;
   margin: 0;
   color: var(--text-primary);
@@ -37,6 +47,7 @@
 }
 
 .delete-btn {
+  color: var(--text-primary);
   position: absolute;
   top: 10px;
   right: 10px;
